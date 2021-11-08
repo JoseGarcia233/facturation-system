@@ -1,0 +1,70 @@
+﻿@model Entidad_System1.proveedores
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<a href="/Proveedor/Show_Datos" class="btn btn-primary">Regresar </a>
+
+<div style="width:100%;text-align:center;">
+
+    <h3>Esta seguro que quiere Borrar este registro </h3>
+
+</div>
+
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cedula)
+        </dt>
+
+
+        <dd>
+            @Html.DisplayFor(model => model.Cedula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div style="width:17%;text-align:right;">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+
+        </div>
+    }
+</div>

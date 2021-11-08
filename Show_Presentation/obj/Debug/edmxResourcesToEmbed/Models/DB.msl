@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sistema_facturacion1ModelStoreContainer" CdmEntityContainer="sistema_facturacion1Entities1">
+    <EntitySetMapping Name="clientes">
+      <EntityTypeMapping TypeName="sistema_facturacion1Model.clientes">
+        <MappingFragment StoreEntitySet="clientes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="factura">
+      <EntityTypeMapping TypeName="sistema_facturacion1Model.factura">
+        <MappingFragment StoreEntitySet="factura">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre_producto" ColumnName="Nombre_producto" />
+          <ScalarProperty Name="Categoria_Cliente" ColumnName="Categoria_Cliente" />
+          <ScalarProperty Name="Monto_total" ColumnName="Monto_total" />
+          <ScalarProperty Name="Catidad" ColumnName="Catidad" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inventario">
+      <EntityTypeMapping TypeName="sistema_facturacion1Model.inventario">
+        <MappingFragment StoreEntitySet="inventario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre_proveedor" ColumnName="Nombre_proveedor" />
+          <ScalarProperty Name="Nombre_poducto" ColumnName="Nombre_poducto" />
+          <ScalarProperty Name="Cantidad_A" ColumnName="Cantidad_A" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productos">
+      <EntityTypeMapping TypeName="sistema_facturacion1Model.productos">
+        <MappingFragment StoreEntitySet="productos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proveedores">
+      <EntityTypeMapping TypeName="sistema_facturacion1Model.proveedores">
+        <MappingFragment StoreEntitySet="proveedores">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

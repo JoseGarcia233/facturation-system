@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Entidad_System1.clientes>
+
+@{
+    ViewBag.Title = "Filtrado de Clientes";
+}
+
+
+<a href="/Cliente/Show_Datos_C" class="btn btn-primary">Regresar </a>
+<div style="width:100%;text-align:center;">
+
+    <h2>@ViewBag.Title</h2>
+
+</div>
+
+<form action="/Clientes/Filter">
+
+    <div class="col-md-6 col-sm-6 col-xs-6 text-left">
+
+        <button type="submit" class="btn btn-success">Buscar</button>
+
+
+        <input type="text" class="form-control" name="Nombre" placeholder="Ingrese Nombre del cliente o Email" />
+    </div>
+    @*<div style="width:100%;text-align:right;">
+
+            @Html.ActionLink("Agregar producto", "Form", null, new { @class = "btn btn-info" })
+        </div>*@
+
+
+</form>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "UpdateC", new { id = item.Id }, new { @class = "btn btn-info" }) | 
+                |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

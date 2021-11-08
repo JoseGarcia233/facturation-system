@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Entidad_System1.proveedores>
+
+@{
+    ViewBag.Title = "Show_Datos_P";
+}
+
+
+<a href="/Proveedor/Index" class="btn btn-primary">Regresar </a>
+
+<div style="width:96%;text-align:center;">
+
+    <h2>Lista de Provedores</h2>
+
+</div>
+
+<form action="/Proveedor/Filter">
+
+    <div class="col-md-6 col-sm-6 col-xs-6 text-left">
+
+        <button type="submit" class="btn btn-success">Buscar</button>
+
+
+        <input type="text" class="form-control" name="Nombre" placeholder="Ingrese Nombre del Proveedor" />
+    </div>
+    @*<div style="width:100%;text-align:right;">
+
+            @Html.ActionLink("Agregar producto", "Form", null, new { @class = "btn btn-info" })
+        </div>*@
+
+
+</form>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <th>
+        @Html.DisplayFor(modelItem => item.Id)
+    </th>
+    <th>
+        @Html.DisplayFor(modelItem => item.Cedula)
+    </th>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Telefono)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Update", new { id = item.Id }, new { @class = "btn btn-info" }) ||
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id}, new { @class = "btn btn-danger" }) ||
+</tr>
+    }
+
+</table>

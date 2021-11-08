@@ -1,0 +1,65 @@
+﻿@model Entidad_System1.inventario
+
+@{
+    ViewBag.Title = "Esta seguro que desea eliminar este registro";
+}
+
+
+<a href="/Inventario/Show_Datos_I" class="btn btn-primary">Regresar </a>
+<div style="width:100%;text-align:center;">
+
+    <h2>@ViewBag.Title</h2>
+
+</div>
+
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_proveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_proveedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_poducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_poducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad_A)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad_A)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div style="width:17%;text-align:right;">
+      <input type="submit" value="Delete" class="btn btn-danger" /> |
+
+       </div>
+    }
+</div>
+
+ 

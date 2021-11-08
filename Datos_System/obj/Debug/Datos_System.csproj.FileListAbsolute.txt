@@ -1,0 +1,15 @@
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\bin\Debug\Datos_System.dll.config
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\bin\Debug\Datos_System.dll
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\bin\Debug\Datos_System.pdb
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\bin\Debug\Entidad_System1.dll
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\bin\Debug\EntityFramework.dll
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\bin\Debug\Entidad_System1.pdb
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\bin\Debug\Entidad_System1.dll.config
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\bin\Debug\EntityFramework.xml
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\obj\Debug\Datos_System.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\obj\Debug\Datos_System.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\obj\Debug\Datos_System.csproj.CopyComplete
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\obj\Debug\Datos_System.dll
+C:\Users\admin\source\repos\Sistema_Facturacion_2.0\Datos_System\obj\Debug\Datos_System.pdb

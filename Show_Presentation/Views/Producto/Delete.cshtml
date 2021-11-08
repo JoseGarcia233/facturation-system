@@ -1,0 +1,47 @@
+﻿@model Entidad_System1.productos
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<a href="/Producto/Show_Datos" class="btn btn-primary">Regresar </a>
+
+
+<div style="width:100%;text-align:left;">
+
+    <h4>Esta seguro que desea eliminar el producto?</h4>
+
+</div>
+
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div style="width:17%;text-align:right;">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+
+        </div>
+    }
+</div>

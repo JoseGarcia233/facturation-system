@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Entidad_System1.factura>
+
+@{
+    ViewBag.Title = "Lista de facturas";
+}
+
+
+<a href="/Facturacion/Index" class="btn btn-primary">Regresar </a>
+
+<div style="width:96%;text-align:center;">
+
+    <h2>Lista de Facturas</h2>
+
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria_Cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Monto_total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Catidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria_Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto_total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Catidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

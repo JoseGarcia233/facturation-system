@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sistema_facturacion1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="clientes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cedula" Type="Int32" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="Int64" />
+    <Property Name="Categoria" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="factura" Relationship="Self.FK__factura__Categor__31EC6D26" FromRole="clientes" ToRole="factura" />
+  </EntityType>
+  <EntityType Name="factura">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Nombre_producto" Type="Int32" />
+    <Property Name="Categoria_Cliente" Type="Int32" />
+    <Property Name="Monto_total" Type="Int32" />
+    <Property Name="Catidad" Type="Int32" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="clientes" Relationship="Self.FK__factura__Categor__31EC6D26" FromRole="factura" ToRole="clientes" />
+    <NavigationProperty Name="inventario" Relationship="Self.FK__factura__Catidad__32E0915F" FromRole="factura" ToRole="inventario" />
+    <NavigationProperty Name="productos" Relationship="Self.FK__factura__Nombre___30F848ED" FromRole="factura" ToRole="productos" />
+  </EntityType>
+  <EntityType Name="inventario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_proveedor" Type="Int32" />
+    <Property Name="Nombre_poducto" Type="Int32" />
+    <Property Name="Cantidad_A" Type="Int32" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="factura" Relationship="Self.FK__factura__Catidad__32E0915F" FromRole="inventario" ToRole="factura" />
+    <NavigationProperty Name="proveedores" Relationship="Self.FK__inventari__Nombr__2D27B809" FromRole="inventario" ToRole="proveedores" />
+    <NavigationProperty Name="productos" Relationship="Self.FK__inventari__Nombr__2E1BDC42" FromRole="inventario" ToRole="productos" />
+  </EntityType>
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Precio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="factura" Relationship="Self.FK__factura__Nombre___30F848ED" FromRole="productos" ToRole="factura" />
+    <NavigationProperty Name="inventario" Relationship="Self.FK__inventari__Nombr__2E1BDC42" FromRole="productos" ToRole="inventario" />
+  </EntityType>
+  <EntityType Name="proveedores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cedula" Type="Int32" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="Int64" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="inventario" Relationship="Self.FK__inventari__Nombr__2D27B809" FromRole="proveedores" ToRole="inventario" />
+  </EntityType>
+  <Association Name="FK__factura__Categor__31EC6D26">
+    <End Role="clientes" Type="Self.clientes" Multiplicity="0..1" />
+    <End Role="factura" Type="Self.factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clientes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="factura">
+        <PropertyRef Name="Categoria_Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__factura__Catidad__32E0915F">
+    <End Role="inventario" Type="Self.inventario" Multiplicity="0..1" />
+    <End Role="factura" Type="Self.factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inventario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="factura">
+        <PropertyRef Name="Catidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__factura__Nombre___30F848ED">
+    <End Role="productos" Type="Self.productos" Multiplicity="0..1" />
+    <End Role="factura" Type="Self.factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="factura">
+        <PropertyRef Name="Nombre_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__inventari__Nombr__2D27B809">
+    <End Role="proveedores" Type="Self.proveedores" Multiplicity="0..1" />
+    <End Role="inventario" Type="Self.inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="inventario">
+        <PropertyRef Name="Nombre_proveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__inventari__Nombr__2E1BDC42">
+    <End Role="productos" Type="Self.productos" Multiplicity="0..1" />
+    <End Role="inventario" Type="Self.inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="inventario">
+        <PropertyRef Name="Nombre_poducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sistema_facturacion1Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="clientes" EntityType="Self.clientes" />
+    <EntitySet Name="factura" EntityType="Self.factura" />
+    <EntitySet Name="inventario" EntityType="Self.inventario" />
+    <EntitySet Name="productos" EntityType="Self.productos" />
+    <EntitySet Name="proveedores" EntityType="Self.proveedores" />
+    <AssociationSet Name="FK__factura__Categor__31EC6D26" Association="Self.FK__factura__Categor__31EC6D26">
+      <End Role="clientes" EntitySet="clientes" />
+      <End Role="factura" EntitySet="factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__factura__Catidad__32E0915F" Association="Self.FK__factura__Catidad__32E0915F">
+      <End Role="inventario" EntitySet="inventario" />
+      <End Role="factura" EntitySet="factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__factura__Nombre___30F848ED" Association="Self.FK__factura__Nombre___30F848ED">
+      <End Role="productos" EntitySet="productos" />
+      <End Role="factura" EntitySet="factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__inventari__Nombr__2D27B809" Association="Self.FK__inventari__Nombr__2D27B809">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="inventario" EntitySet="inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__inventari__Nombr__2E1BDC42" Association="Self.FK__inventari__Nombr__2E1BDC42">
+      <End Role="productos" EntitySet="productos" />
+      <End Role="inventario" EntitySet="inventario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

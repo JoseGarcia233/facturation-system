@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2df13fa710c44e5f80b43ae42df186e5" Name="Diagram1">
+        <EntityTypeShape EntityType="sistema_facturacion1Model.clientes" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_facturacion1Model.factura" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_facturacion1Model.inventario" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_facturacion1Model.productos" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_facturacion1Model.proveedores" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="sistema_facturacion1Model.FK__factura__Categor__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_facturacion1Model.FK__factura__Catidad__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_facturacion1Model.FK__factura__Nombre___30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_facturacion1Model.FK__inventari__Nombr__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_facturacion1Model.FK__inventari__Nombr__2E1BDC42" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

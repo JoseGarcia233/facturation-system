@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Entidad_System1.inventario>
+
+@{
+    ViewBag.Title = "Lista de inventario";
+}
+
+
+<a href="/Inventario/Index" class="btn btn-primary">Regresar </a>
+<div style="width:100%;text-align:center;">
+
+    <h2>@ViewBag.Title</h2>
+
+</div>
+
+<form action="/Inventario/Filter">
+
+    <div class="col-md-6 col-sm-6 col-xs-6 text-left">
+
+        <button type="submit" class="btn btn-success">Buscar</button>
+
+
+        <input type="text" class="form-control" name="Nombre" placeholder="Ingrese el producto, Fecha, o Provedor" />
+    </div>
+    @*<div style="width:100%;text-align:right;">
+
+            @Html.ActionLink("Agregar producto", "Form", null, new { @class = "btn btn-info" })
+        </div>*@
+
+
+</form>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_proveedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_poducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad_A)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_proveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_poducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad_A)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Update", new { id = item.Id }, new { @class = "btn btn-info" }) |
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
